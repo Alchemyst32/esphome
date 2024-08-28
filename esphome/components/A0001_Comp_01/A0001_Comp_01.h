@@ -25,9 +25,6 @@
 #include "esphome/components/uart/uart.h"
 #include "esphome/core/automation.h"
 #include "esphome/core/helpers.h"
-
-//#include "esphome/components/gpio/output/gpio_binary_output.h" //ALEX
-//#include "esphome/core/hal.h" //ALEX
 #include <map>
 
 namespace esphome {

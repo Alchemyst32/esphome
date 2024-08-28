@@ -84,7 +84,8 @@ void A0001_Comp_01Component::setup() {
   ESP_LOGCONFIG(TAG, "Mac Address : %s", const_cast<char *>(this->mac_.c_str()));
   ESP_LOGCONFIG(TAG, "Firmware Version : %s", const_cast<char *>(this->version_.c_str()));
   ESP_LOGCONFIG(TAG, "A0001_Comp_01 setup complete.");
-   this->set_Gpio_Config(); //ALEX
+  
+  
 }
 
 void A0001_Comp_01Component::read_all_info() {
@@ -101,7 +102,7 @@ void A0001_Comp_01Component::read_all_info() {
     this->baud_rate_select_->publish_state(baud_rate);
   }
 #endif
- this->set_Gpio_Config(); //ALEX
+ ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
 }
 
 void A0001_Comp_01Component::restart_and_read_all_info() {
@@ -121,12 +122,12 @@ void A0001_Comp_01Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
 
-  unsigned char _sel_pin=2; //ALEX
-  this->set_Gpio_Config(); //ALEX
+
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
-     this->set_Gpio_Config(); //ALEX
+    ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
+     
   }
 }
 
@@ -155,6 +156,7 @@ void A0001_Comp_01Component::send_command_(uint8_t command, const uint8_t *comma
   this->write_array(CMD_FRAME_END, 4);
   // FIXME to remove
   delay(50);  // NOLINT
+ ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
 }
 
 void A0001_Comp_01Component::handle_periodic_data_(uint8_t *buffer, int len) {
@@ -657,6 +659,7 @@ void A0001_Comp_01Component::set_gate_move_threshold_number(int gate, number::Nu
 #endif
 
 void A0001_Comp_01Component::set_light_out_control() {
+   ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
 #ifdef USE_NUMBER
   if (this->light_threshold_number_ != nullptr && this->light_threshold_number_->has_state()) {
     this->light_threshold_ = this->light_threshold_number_->state;
@@ -683,7 +686,7 @@ void A0001_Comp_01Component::set_light_out_control() {
   this->get_light_control_();
   this->set_timeout(200, [this]() { this->restart_and_read_all_info(); });
   this->set_config_mode_(false);
-   this->set_Gpio_Config(); //ALEX
+ 
 }
 
 #ifdef USE_SENSOR
