@@ -81,6 +81,7 @@ void A0001_Comp_01Component::dump_config() {
 void A0001_Comp_01Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up A0001_Comp_01...");
   this->read_all_info();
+  ESP_LOGCONFIG(TAG, "HELLO WORLD! ALEX "); //ALEX
   ESP_LOGCONFIG(TAG, "Mac Address : %s", const_cast<char *>(this->mac_.c_str()));
   ESP_LOGCONFIG(TAG, "Firmware Version : %s", const_cast<char *>(this->version_.c_str()));
   ESP_LOGCONFIG(TAG, "A0001_Comp_01 setup complete.");
