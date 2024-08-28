@@ -118,10 +118,13 @@ void A0001_Comp_01Component::set_Gpio_Config(){ //ALEX
 void A0001_Comp_01Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
-  this->set_Gpio_Config();
+
+  unsigned char _sel_pin=2; //ALEX
+  this->set_Gpio_Config(); //ALEX
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
+    digitalWrite(_sel_pin,true); //ALEX
   }
 }
 
