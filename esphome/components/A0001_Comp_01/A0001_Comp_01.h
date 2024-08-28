@@ -26,8 +26,8 @@
 #include "esphome/core/automation.h"
 #include "esphome/core/helpers.h"
 
-#include "esphome/components/gpio/output/gpio_binary_output.h" //ALEX
-#include "esphome/core/hal.h" //ALEX
+//#include "esphome/components/gpio/output/gpio_binary_output.h" //ALEX
+//#include "esphome/core/hal.h" //ALEX
 #include <map>
 
 namespace esphome {
@@ -137,8 +137,8 @@ enum AckDataStructure : uint8_t { COMMAND = 6, COMMAND_STATUS = 7 };
 
 
 //  char cmd[2] = {enable ? 0xFF : 0xFE, 0x00};
-//class A0001_Comp_01Component : public Component, public uart::UARTDevice {
-class A0001_Comp_01Component : public Component, public uart::UARTDevice,public gpio::GPIOBinaryOutput { //ALEX
+class A0001_Comp_01Component : public Component, public uart::UARTDevice {
+//class A0001_Comp_01Component : public Component, public uart::UARTDevice,public gpio::GPIOBinaryOutput { //ALEX
 #ifdef USE_SENSOR
   SUB_SENSOR(moving_target_distance)
   SUB_SENSOR(still_target_distance)
@@ -204,8 +204,8 @@ class A0001_Comp_01Component : public Component, public uart::UARTDevice,public 
   void set_distance_resolution(const std::string &state);
   void set_baud_rate(const std::string &state);
   void factory_reset();
-  void set_Gpio_Config();
-  
+  void set_Gpio_Config(); //ALEX
+
  protected:
   int two_byte_to_int_(char firstbyte, char secondbyte) { return (int16_t) (secondbyte << 8) + firstbyte; }
   void send_command_(uint8_t command_str, const uint8_t *command_value, int command_value_len);
