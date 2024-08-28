@@ -112,7 +112,8 @@ void A0001_Comp_01Component::restart_and_read_all_info() {
 void A0001_Comp_01Component::set_Gpio_Config(){ //ALEX
   unsigned char _sel_pin=2;
     pinMode(_sel_pin, OUTPUT);
-  pin_->digital_write(true);
+    digitalWrite(_sel_pin,true);
+    
 }
 void A0001_Comp_01Component::loop() {
   const int max_line_length = 80;
