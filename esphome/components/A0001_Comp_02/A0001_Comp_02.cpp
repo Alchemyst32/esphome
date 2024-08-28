@@ -115,7 +115,7 @@ void A0001_Comp_02Component::restart_and_read_all_info() {
 
 void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX
   unsigned char _sel_pin=2;
-    //pinMode(_sel_pin, OUTPUT);
+    pinMode(_sel_pin, OUTPUT);
     //digitalWrite(_sel_pin,HIGH);
     
 }
