@@ -84,6 +84,7 @@ void A0001_Comp_01Component::setup() {
   ESP_LOGCONFIG(TAG, "Mac Address : %s", const_cast<char *>(this->mac_.c_str()));
   ESP_LOGCONFIG(TAG, "Firmware Version : %s", const_cast<char *>(this->version_.c_str()));
   ESP_LOGCONFIG(TAG, "A0001_Comp_01 setup complete.");
+   this->set_Gpio_Config(); //ALEX
 }
 
 void A0001_Comp_01Component::read_all_info() {
@@ -100,6 +101,7 @@ void A0001_Comp_01Component::read_all_info() {
     this->baud_rate_select_->publish_state(baud_rate);
   }
 #endif
+ this->set_Gpio_Config(); //ALEX
 }
 
 void A0001_Comp_01Component::restart_and_read_all_info() {
@@ -124,7 +126,7 @@ void A0001_Comp_01Component::loop() {
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
-    digitalWrite(_sel_pin,HIGH); //ALEX
+     this->set_Gpio_Config(); //ALEX
   }
 }
 
@@ -681,6 +683,7 @@ void A0001_Comp_01Component::set_light_out_control() {
   this->get_light_control_();
   this->set_timeout(200, [this]() { this->restart_and_read_all_info(); });
   this->set_config_mode_(false);
+   this->set_Gpio_Config(); //ALEX
 }
 
 #ifdef USE_SENSOR
