@@ -1,5 +1,6 @@
 #include "A0001_Comp_01.h"
-
+//#include "esphome/components/gpio/output/gpio_binary_output.h" //ALEX
+#include "esphome/core/gpio.h" //ALEX
 #include <utility>
 #ifdef USE_NUMBER
 #include "esphome/components/number/number.h"
@@ -107,9 +108,16 @@ void A0001_Comp_01Component::restart_and_read_all_info() {
   this->set_timeout(1000, [this]() { this->read_all_info(); });
 }
 
+
+void A0001_Comp_01Component::set_Gpio_Config(){ //ALEX
+  unsigned char _sel_pin=2;
+    pinMode(_sel_pin, OUTPUT);
+  pin_->digital_write(true);
+}
 void A0001_Comp_01Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
+  this->set_Gpio_Config();
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
