@@ -118,7 +118,7 @@ void A0001_Comp_02Component::restart_and_read_all_info() {
 
 void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   unsigned char _sel_pin=2;
-   gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
+   
     pinMode(_sel_pin, 0x02);
     digitalWrite(_sel_pin,0x1);
      ESP_LOGD("custom", "Hello World!");
