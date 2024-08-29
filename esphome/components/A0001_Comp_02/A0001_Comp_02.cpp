@@ -217,8 +217,8 @@ void A0001_Comp_02Component::handle_periodic_data_(uint8_t *buffer, int len) {
   if (this->moving_target_binary_sensor_ != nullptr) {
     this->moving_target_binary_sensor_->publish_state(CHECK_BIT(target_state, 0));
    // ESP_LOGI("Alex", "Target 2 %i",target_state);  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-   if (target_state==3) {ESP_LOGI("Alex", "DETECTOR OFF",target_state);}  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////
-   if (target_state==2) {ESP_LOGI("Alex", "DETECTOR ON",target_state);}  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////
+   if (target_state==3) {ESP_LOGI("Alex", "DETECTOR OFF");}  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////
+   if (target_state==2) {ESP_LOGI("Alex", "DETECTOR ON");}  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////
   }
   if (this->still_target_binary_sensor_ != nullptr) {
     this->still_target_binary_sensor_->publish_state(CHECK_BIT(target_state, 1));
