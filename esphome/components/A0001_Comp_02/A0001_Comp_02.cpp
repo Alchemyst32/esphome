@@ -75,7 +75,6 @@ void A0001_Comp_02Component::dump_config() {
   }
 #endif
   this->read_all_info();
-  //ESP_LOGCONFIG(TAG, "HELLO WORLD! ALEX "); //ALEX///////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGCONFIG(TAG, "  Throttle_ : %ums", this->throttle_);
   ESP_LOGCONFIG(TAG, "  MAC Address : %s", const_cast<char *>(this->mac_.c_str()));
   ESP_LOGCONFIG(TAG, "  Firmware Version : %s", const_cast<char *>(this->version_.c_str()));
@@ -84,7 +83,6 @@ void A0001_Comp_02Component::dump_config() {
 void A0001_Comp_02Component::setup() {
   ESP_LOGCONFIG(TAG, "Setting up A0001_Comp_02...");
   this->read_all_info();
-  //ESP_LOGCONFIG(TAG, "HELLO WORLD! ALEX "); //ALEX///////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGCONFIG(TAG, "Mac Address : %s", const_cast<char *>(this->mac_.c_str()));
   ESP_LOGCONFIG(TAG, "Firmware Version : %s", const_cast<char *>(this->version_.c_str()));
   ESP_LOGCONFIG(TAG, "A0001_Comp_02 setup complete.");
@@ -106,7 +104,6 @@ void A0001_Comp_02Component::read_all_info() {
     this->baud_rate_select_->publish_state(baud_rate);
   }
 #endif
- //ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX///////////////////////////////////////////////////////////////////////////////////////
 }
 
 void A0001_Comp_02Component::restart_and_read_all_info() {
@@ -122,8 +119,8 @@ void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX /////////////////////////
     ///////pinMode(_sel_pin, 0x02);
     //digitalWrite(_sel_pin,0x1);
     //ESP_LOGD("custom", "Hello World!");
-     ESP_LOGV(TAG, "Rutina GPIO Llamada!");
-     ESP_LOGD("custom", "Rutina GPIO Llamada");
+    // ESP_LOGV(TAG, "Rutina GPIO Llamada!");
+     ESP_LOGD("Alex", "Rutina GPIO Llamada YuJU!!!!");
 }
 void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
@@ -137,8 +134,6 @@ void A0001_Comp_02Component::loop() {
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
-    //ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
-    //this->set_Gpio_Config();
   }
 }
 
@@ -167,7 +162,6 @@ void A0001_Comp_02Component::send_command_(uint8_t command, const uint8_t *comma
   this->write_array(CMD_FRAME_END, 4);
   // FIXME to remove
   delay(50);  // NOLINT
- //ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX///////////////////////////////////////////////////////////////////////////////////////
 }
 
 void A0001_Comp_02Component::handle_periodic_data_(uint8_t *buffer, int len) {
@@ -670,7 +664,7 @@ void A0001_Comp_02Component::set_gate_move_threshold_number(int gate, number::Nu
 #endif
 
 void A0001_Comp_02Component::set_light_out_control() {
-   //ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX///////////////////////////////////////////////////////////////////////////////////////
+  
 #ifdef USE_NUMBER
   if (this->light_threshold_number_ != nullptr && this->light_threshold_number_->has_state()) {
     this->light_threshold_ = this->light_threshold_number_->state;
