@@ -122,7 +122,7 @@ void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX /////////////////////////
     ///////pinMode(_sel_pin, 0x02);
     //digitalWrite(_sel_pin,0x1);
     //ESP_LOGD("custom", "Hello World!");
-    //  ESP_LOGV(TAG, "Hello World!");
+     ESP_LOGV(TAG, "Rutina GPIO Llamada!");
      ESP_LOGD("custom", "Rutina GPIO Llamada");
 }
 void A0001_Comp_02Component::loop() {
