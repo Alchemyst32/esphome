@@ -171,9 +171,9 @@ void A0001_Comp_02Component::send_command_(uint8_t command, const uint8_t *comma
   // FIXME to remove
   delay(50);  // NOLINT
 }
-
+// ANALIZA LAS TRAMAS RECIBIDAS ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void A0001_Comp_02Component::handle_periodic_data_(uint8_t *buffer, int len) {
-  ESP_LOGI("Alex", "handle_periodic_data_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //ESP_LOGI("Alex", "handle_periodic_data_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (len < 12)
     return;  // 4 frame start bytes + 2 length bytes + 1 data end byte + 1 crc byte + 4 frame end bytes
   if (buffer[0] != 0xF4 || buffer[1] != 0xF3 || buffer[2] != 0xF2 || buffer[3] != 0xF1)  // check 4 frame start bytes
@@ -212,12 +212,15 @@ void A0001_Comp_02Component::handle_periodic_data_(uint8_t *buffer, int len) {
   char target_state = buffer[TARGET_STATES];
   if (this->target_binary_sensor_ != nullptr) {
     this->target_binary_sensor_->publish_state(target_state != 0x00);
+    ESP_LOGI("Alex", "Target 1");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   }
   if (this->moving_target_binary_sensor_ != nullptr) {
     this->moving_target_binary_sensor_->publish_state(CHECK_BIT(target_state, 0));
+    ESP_LOGI("Alex", "Target 2");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   }
   if (this->still_target_binary_sensor_ != nullptr) {
     this->still_target_binary_sensor_->publish_state(CHECK_BIT(target_state, 1));
+    ESP_LOGI("Alex", "Target 3");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   }
 #endif
   /*
@@ -355,9 +358,9 @@ std::function<void(void)> set_number_value(number::Number *n, float value) {
   return []() {};
 }
 #endif
-///////// ANALIZA LAS TRAMAS RECIBIDAS POR UART ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 bool A0001_Comp_02Component::handle_ack_data_(uint8_t *buffer, int len) {
-  //ESP_LOGI("Alex", "handle_ack_data_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ESP_LOGI("Alex", "handle_ack_data_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGV(TAG, "Handling ACK DATA for COMMAND %02X", buffer[COMMAND]);
   if (len < 10) {
     ESP_LOGE(TAG, "Error with last command : incorrect length");
@@ -379,11 +382,11 @@ bool A0001_Comp_02Component::handle_ack_data_(uint8_t *buffer, int len) {
   switch (buffer[COMMAND]) {
     case lowbyte(CMD_ENABLE_CONF):
       ESP_LOGV(TAG, "Handled Enable conf command");
-      ESP_LOGI("Alex", "MOVIMIENTO OFF");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+      
       break;
     case lowbyte(CMD_DISABLE_CONF):
       ESP_LOGV(TAG, "Handled Disabled conf command");
-      ESP_LOGI("Alex", "MOVIMIENTO ON");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+      
       break;
     case lowbyte(CMD_SET_BAUD_RATE):
       ESP_LOGV(TAG, "Handled baud rate change command");
