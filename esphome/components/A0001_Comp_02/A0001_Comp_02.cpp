@@ -118,8 +118,8 @@ void A0001_Comp_02Component::restart_and_read_all_info() {
 
 void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX
   unsigned char _sel_pin=2;
-    pinMode(_sel_pin, FLAG_OUTPUT);
-    digitalWrite(_sel_pin,HIGH);
+    pinMode(_sel_pin, 0x02);
+    digitalWrite(_sel_pin,0x1);
      ESP_LOGD("custom", "Hello World!");
      ESP_LOGD("custom", "The GPIO pin 2 is HIGH!");
 }
@@ -127,7 +127,7 @@ void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
 
-
+ this->set_Gpio_Config();
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
