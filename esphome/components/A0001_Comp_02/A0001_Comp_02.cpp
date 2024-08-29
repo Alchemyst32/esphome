@@ -121,7 +121,7 @@ void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX /////////////////////////
    
     ///////pinMode(_sel_pin, 0x02);
     //digitalWrite(_sel_pin,0x1);
-     ESP_LOGD("custom", "Hello World!");
+    //ESP_LOGD("custom", "Hello World!");
       ESP_LOGV(TAG, "Hello World!");
      ESP_LOGD("custom", "The GPIO pin 2 is HIGH!");
 }
@@ -133,7 +133,7 @@ void A0001_Comp_02Component::loop() {
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
-    ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
+    //ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
      
   }
 }
