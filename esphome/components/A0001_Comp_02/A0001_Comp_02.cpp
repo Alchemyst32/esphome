@@ -122,6 +122,8 @@ void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX /////////////////////////
     // ESP_LOGV(TAG, "Rutina GPIO Llamada!");
      ESP_LOGD("Alex", "Rutina GPIO Llamada YuJU!!!!"); // Depuracion
      ESP_LOGI("Alex", "Rutina GPIO Llamada YuJU!!!!");  //Informacion
+     ESP_LOGW("Alex", "Rutina GPIO Llamada YuJU!!!!");  //Warning
+     ESP_LOGE("Alex", "Rutina GPIO Llamada YuJU!!!!");  //Error
 }
 void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
