@@ -75,7 +75,7 @@ void A0001_Comp_02Component::dump_config() {
   }
 #endif
   this->read_all_info();
-   ESP_LOGCONFIG(TAG, "HELLO WORLD! ALEX "); //ALEX
+  ESP_LOGCONFIG(TAG, "HELLO WORLD! ALEX "); //ALEX
   ESP_LOGCONFIG(TAG, "  Throttle_ : %ums", this->throttle_);
   ESP_LOGCONFIG(TAG, "  MAC Address : %s", const_cast<char *>(this->mac_.c_str()));
   ESP_LOGCONFIG(TAG, "  Firmware Version : %s", const_cast<char *>(this->version_.c_str()));
@@ -116,8 +116,9 @@ void A0001_Comp_02Component::restart_and_read_all_info() {
 }
 
 
-void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX
+void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   unsigned char _sel_pin=2;
+   gpio_install_isr_service(ESP_INTR_FLAG_DEFAULT);
     pinMode(_sel_pin, 0x02);
     digitalWrite(_sel_pin,0x1);
      ESP_LOGD("custom", "Hello World!");
