@@ -129,12 +129,12 @@ void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
 
- this->set_Gpio_Config();
+ 
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
     //ESP_LOGV(TAG, "HELLO WORLD!"); //ALEX
-     
+     this->set_Gpio_Config();
   }
 }
 
