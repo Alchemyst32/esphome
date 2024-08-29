@@ -129,7 +129,7 @@ void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
   if (this->Paso<0) {this->Paso=0;}
-  if (this->Paso>1000) {
+  if (this->Paso>3000) {
     this->set_Gpio_Config();
     this->Paso=0;
   }
