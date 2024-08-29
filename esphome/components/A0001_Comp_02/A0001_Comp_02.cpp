@@ -1,7 +1,7 @@
 #include "A0001_Comp_02.h"
 //#include "esphome/components/gpio/output/gpio_binary_output.h" //ALEX
 #include "esphome/core/gpio.h" //ALEX
-
+#include "Arduino.h"
 
 #include <utility>
 #ifdef USE_NUMBER
