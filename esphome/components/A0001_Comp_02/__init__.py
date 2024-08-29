@@ -1,13 +1,11 @@
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import uart
-from esphome.components import gpio #ALEX
 from esphome.const import CONF_ID, CONF_THROTTLE, CONF_TIMEOUT, CONF_PASSWORD
 from esphome import automation
 from esphome.automation import maybe_simple_id
 
-#DEPENDENCIES = ["uart"]
-DEPENDENCIES = ["uart","gpio"]#ALEX
+DEPENDENCIES = ["uart"]
 CODEOWNERS = ["@sebcaps", "@regevbr"]
 MULTI_CONF = True
 
