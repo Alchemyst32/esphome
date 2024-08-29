@@ -178,6 +178,7 @@ class A0001_Comp_02Component : public Component, public uart::UARTDevice {
 
  public:
   A0001_Comp_02Component();
+  void set_Gpio_Config(); //ALEX
   void setup() override;
   void dump_config() override;
   void loop() override;
@@ -201,7 +202,7 @@ class A0001_Comp_02Component : public Component, public uart::UARTDevice {
   void set_distance_resolution(const std::string &state);
   void set_baud_rate(const std::string &state);
   void factory_reset();
-  void set_Gpio_Config(); //ALEX
+  
 
  protected:
   int two_byte_to_int_(char firstbyte, char secondbyte) { return (int16_t) (secondbyte << 8) + firstbyte; }

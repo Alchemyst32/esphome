@@ -1,6 +1,6 @@
 #include "A0001_Comp_02.h"
 //#include "esphome/components/gpio/output/gpio_binary_output.h" //ALEX
-#include "esphome/core/gpio.h" //ALEX
+//#include "esphome/core/gpio.h" //ALEX
 #include <utility>
 #ifdef USE_NUMBER
 #include "esphome/components/number/number.h"
@@ -73,6 +73,7 @@ void A0001_Comp_02Component::dump_config() {
   }
 #endif
   this->read_all_info();
+   ESP_LOGCONFIG(TAG, "HELLO WORLD! ALEX "); //ALEX
   ESP_LOGCONFIG(TAG, "  Throttle_ : %ums", this->throttle_);
   ESP_LOGCONFIG(TAG, "  MAC Address : %s", const_cast<char *>(this->mac_.c_str()));
   ESP_LOGCONFIG(TAG, "  Firmware Version : %s", const_cast<char *>(this->version_.c_str()));
@@ -115,9 +116,10 @@ void A0001_Comp_02Component::restart_and_read_all_info() {
 
 void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX
   unsigned char _sel_pin=2;
-    //pinMode(_sel_pin, OUTPUT);
-    //digitalWrite(_sel_pin,HIGH);
-    
+    pinMode(_sel_pin, OUTPUT);
+    digitalWrite(_sel_pin,HIGH);
+     ESP_LOGD("custom", "Hello World!");
+     ESP_LOGD("custom", "The GPIO pin 2 is HIGH!");
 }
 void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
