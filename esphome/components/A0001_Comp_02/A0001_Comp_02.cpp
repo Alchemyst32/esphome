@@ -142,6 +142,7 @@ void A0001_Comp_02Component::loop() {
 
 void A0001_Comp_02Component::send_command_(uint8_t command, const uint8_t *command_value, int command_value_len) {
   ESP_LOGV(TAG, "Sending COMMAND %02X", command);
+  ESP_LOGI("Alex", "Envío de comando");  //Informacion
   // frame start bytes
   this->write_array(CMD_FRAME_HEADER, 4);
   // length bytes
