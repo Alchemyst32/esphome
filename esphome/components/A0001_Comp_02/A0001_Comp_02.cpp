@@ -117,19 +117,23 @@ void A0001_Comp_02Component::restart_and_read_all_info() {
 
 
 void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  unsigned char _sel_pin=2;
+  //unsigned char _sel_pin=2;
    
     ///////pinMode(_sel_pin, 0x02);
     //digitalWrite(_sel_pin,0x1);
     //ESP_LOGD("custom", "Hello World!");
     //  ESP_LOGV(TAG, "Hello World!");
-    // ESP_LOGD("custom", "Rutina GPIO Llamada");
+     ESP_LOGD("custom", "Rutina GPIO Llamada");
 }
 void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
-
- 
+int Paso=0;
+  if (Paso>1000) {
+    this->set_Gpio_Config();
+    Paso=0;
+  }
+  Paso++;
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
