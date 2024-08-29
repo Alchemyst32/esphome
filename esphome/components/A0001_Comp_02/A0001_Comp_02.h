@@ -234,6 +234,7 @@ class A0001_Comp_02Component : public Component, public uart::UARTDevice {
   std::vector<sensor::Sensor *> gate_still_sensors_ = std::vector<sensor::Sensor *>(9);
   std::vector<sensor::Sensor *> gate_move_sensors_ = std::vector<sensor::Sensor *>(9);
 #endif
+int Paso;//ALex
 };
 
  

@@ -128,12 +128,12 @@ void A0001_Comp_02Component::set_Gpio_Config(){ //ALEX /////////////////////////
 void A0001_Comp_02Component::loop() {
   const int max_line_length = 80;
   static uint8_t buffer[max_line_length];
-int Paso=0;
-  if (Paso>1000) {
+  if (this->Paso<0) {this->Paso=0;}
+  if (this->Paso>1000) {
     this->set_Gpio_Config();
-    Paso=0;
+    this->Paso=0;
   }
-  Paso++;
+  this->Paso++;
 
   while (available()) {
     this->readline_(read(), buffer, max_line_length);
