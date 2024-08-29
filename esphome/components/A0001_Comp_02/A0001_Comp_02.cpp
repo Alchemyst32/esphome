@@ -355,9 +355,9 @@ std::function<void(void)> set_number_value(number::Number *n, float value) {
   return []() {};
 }
 #endif
-
+///////// ANALIZA LAS TRAMAS RECIBIDAS POR UART ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 bool A0001_Comp_02Component::handle_ack_data_(uint8_t *buffer, int len) {
-  ESP_LOGI("Alex", "handle_ack_data_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+  //ESP_LOGI("Alex", "handle_ack_data_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGV(TAG, "Handling ACK DATA for COMMAND %02X", buffer[COMMAND]);
   if (len < 10) {
     ESP_LOGE(TAG, "Error with last command : incorrect length");
@@ -379,9 +379,11 @@ bool A0001_Comp_02Component::handle_ack_data_(uint8_t *buffer, int len) {
   switch (buffer[COMMAND]) {
     case lowbyte(CMD_ENABLE_CONF):
       ESP_LOGV(TAG, "Handled Enable conf command");
+      ESP_LOGI("Alex", "MOVIMIENTO OFF");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
       break;
     case lowbyte(CMD_DISABLE_CONF):
       ESP_LOGV(TAG, "Handled Disabled conf command");
+      ESP_LOGI("Alex", "MOVIMIENTO ON");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
       break;
     case lowbyte(CMD_SET_BAUD_RATE):
       ESP_LOGV(TAG, "Handled baud rate change command");
