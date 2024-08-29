@@ -22,6 +22,7 @@ static const char *const TAG = "A0001_Comp_02";
 A0001_Comp_02Component::A0001_Comp_02Component() {}
 
 void A0001_Comp_02Component::dump_config() {
+  ESP_LOGI("Alex", "dump_config");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGCONFIG(TAG, "A0001_Comp_02:");
 #ifdef USE_BINARY_SENSOR
   LOG_BINARY_SENSOR("  ", "TargetBinarySensor", this->target_binary_sensor_);
@@ -81,6 +82,7 @@ void A0001_Comp_02Component::dump_config() {
 }
 
 void A0001_Comp_02Component::setup() {
+  ESP_LOGI("Alex", "setup");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGCONFIG(TAG, "Setting up A0001_Comp_02...");
   this->read_all_info();
   ESP_LOGCONFIG(TAG, "Mac Address : %s", const_cast<char *>(this->mac_.c_str()));
@@ -506,7 +508,7 @@ bool A0001_Comp_02Component::handle_ack_data_(uint8_t *buffer, int len) {
 
 void A0001_Comp_02Component::readline_(int readch, uint8_t *buffer, int len) {
   static int pos = 0;
-ESP_LOGI("Alex", "readline_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//ESP_LOGI("Alex", "readline_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   if (readch >= 0) {
     if (pos < len - 1) {
       buffer[pos++] = readch;
