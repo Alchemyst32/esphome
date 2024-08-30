@@ -5,7 +5,7 @@ from esphome.const import (
     DEVICE_CLASS_MOTION,
     DEVICE_CLASS_OCCUPANCY,
     DEVICE_CLASS_PRESENCE,
-    DEVICE_CLASS_SWITCH, #ALEX /////////////////////////////////////////////////////////////////////////////////////////////////
+  #  DEVICE_CLASS_SWITCH, #ALEX /////////////////////////////////////////////////////////////////////////////////////////////////
     ENTITY_CATEGORY_DIAGNOSTIC,
     ICON_MOTION_SENSOR,
     ICON_ACCOUNT,
@@ -41,7 +41,7 @@ CONFIG_SCHEMA = {
     ),
     #ALEX/////////////////////////////////////////////////////////////////////////////////////////////////////////////
     cv.Optional(CONF_OUT_ALEX_SIGNAL_STATUS): binary_sensor.binary_sensor_schema(
-        device_class=DEVICE_CLASS_SWITCH,
+        device_class=DEVICE_CLASS_PRESENCE,
         entity_category=ENTITY_CATEGORY_DIAGNOSTIC,
         icon=ICON_ACCOUNT,
     ),
