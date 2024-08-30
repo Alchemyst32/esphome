@@ -1,12 +1,12 @@
 import esphome.codegen as cg
 from esphome.components import binary_sensor
-from esphome.components import switch
+#from esphome.components import switch
 import esphome.config_validation as cv
 from esphome.const import (
     DEVICE_CLASS_MOTION,
     DEVICE_CLASS_OCCUPANCY,
     DEVICE_CLASS_PRESENCE,
-    DEVICE_CLASS_SWITCH, #ALEX /////////////////////////////////////////////////////////////////////////////////////////////////
+ #   DEVICE_CLASS_SWITCH, #ALEX /////////////////////////////////////////////////////////////////////////////////////////////////
     ENTITY_CATEGORY_DIAGNOSTIC,
     ICON_MOTION_SENSOR,
     ICON_ACCOUNT,
