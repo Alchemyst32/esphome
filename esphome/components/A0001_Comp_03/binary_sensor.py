@@ -13,7 +13,7 @@ from esphome.const import (
     CONF_HAS_TARGET,
     CONF_HAS_MOVING_TARGET,
     CONF_HAS_STILL_TARGET,
-)
+) 
 from . import CONF_A0001_Comp_03_ID, A0001_Comp_03Component
 
 DEPENDENCIES = ["A0001_Comp_03"]
