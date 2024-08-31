@@ -22,9 +22,11 @@
 #ifdef USE_TEXT_SENSOR
 #include "esphome/components/text_sensor/text_sensor.h"
 #endif
+//#include "esphome/components/output/binary_output.h" //ALEX //////////////////////////////////////////////////////////////////////////////////
 #include "esphome/components/uart/uart.h"
 #include "esphome/core/automation.h"
 #include "esphome/core/helpers.h"
+
 #include <map>
 
 namespace esphome {
@@ -178,7 +180,7 @@ class A0001_Comp_03Component : public Component, public uart::UARTDevice {
 
  public:
   A0001_Comp_03Component();
-  void set_Gpio_Config(); //ALEX
+  void set_Gpio_Config(); //ALEX //////////////////////////////////////////////////////////////////////////////////
   void setup() override;
   void dump_config() override;
   void loop() override;
