@@ -22,7 +22,7 @@ static const char *const TAG = "A0001_Comp_03";
 A0001_Comp_03Component::A0001_Comp_03Component() {}
 
 void A0001_Comp_03Component::dump_config() {
-  ESP_LOGI("Alex", "dump_config");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  ESP_LOGI("Alex", "dump_config");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGCONFIG(TAG, "A0001_Comp_03:");
 #ifdef USE_BINARY_SENSOR
   LOG_BINARY_SENSOR("  ", "TargetBinarySensor", this->target_binary_sensor_);
@@ -82,7 +82,7 @@ void A0001_Comp_03Component::dump_config() {
 }
 
 void A0001_Comp_03Component::setup() {
-  ESP_LOGI("Alex", "setup");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  ESP_LOGI("Alex", "setup");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   ESP_LOGCONFIG(TAG, "Setting up A0001_Comp_03...");
   this->read_all_info();
   ESP_LOGCONFIG(TAG, "Mac Address : %s", const_cast<char *>(this->mac_.c_str()));
@@ -93,7 +93,7 @@ void A0001_Comp_03Component::setup() {
 }
 
 void A0001_Comp_03Component::read_all_info() {
-  ESP_LOGI("Alex", "read_all_info");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  ESP_LOGI("Alex", "read_all_info");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   this->set_config_mode_(true);
   this->get_version_();
   this->get_mac_();
@@ -110,7 +110,7 @@ void A0001_Comp_03Component::read_all_info() {
 }
 
 void A0001_Comp_03Component::restart_and_read_all_info() {
-  ESP_LOGI("Alex", "restart_and_read_all_info");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//  ESP_LOGI("Alex", "restart_and_read_all_info");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   this->set_config_mode_(true);
   this->restart_();
   this->set_timeout(1000, [this]() { this->read_all_info(); });
@@ -146,7 +146,7 @@ void A0001_Comp_03Component::loop() {
 
 void A0001_Comp_03Component::send_command_(uint8_t command, const uint8_t *command_value, int command_value_len) {
   ESP_LOGV(TAG, "Sending COMMAND %02X", command);
-  ESP_LOGI("Alex", "send_command_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+  // ESP_LOGI("Alex", "send_command_");  //ALEX -Informacion ///////////////////////////////////////////////////////////////////////////////////////////////////////////
   // frame start bytes
   this->write_array(CMD_FRAME_HEADER, 4);
   // length bytes
