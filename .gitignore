@@ -144,3 +144,9 @@ sdkconfig.*
 /managed_components
 
 api-docs/
+
+
+
+# Secrets reales (NUNCA al repo)
+/secrets.yaml
+secrets.yaml
