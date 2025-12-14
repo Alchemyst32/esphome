@@ -1,0 +1,14 @@
+[
+  {
+    "task": "ESPHome: Compile & OTA",
+    "color": "green",
+    "text": "OTA",
+    "tooltip": "Compila y sube por OTA"
+  },
+  {
+    "task": "ESPHome: Compile & USB",
+    "color": "blue",
+    "text": "USB",
+    "tooltip": "Compila y sube por USB"
+  }
+]

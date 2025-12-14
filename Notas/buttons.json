@@ -1,0 +1,12 @@
+{
+    "buttons": [
+        {
+            "text": "🔼 OTA Upload",
+            "task": "ESPHome: Compile & Upload OTA"
+        },
+        {
+            "text": "💻 USB Upload",
+            "task": "ESPHome: Compile & Upload USB"
+        }
+    ]
+}

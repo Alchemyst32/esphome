@@ -1,0 +1,25 @@
+ python -m esphome run configs\test.yaml
+
+pip uninstall esphome #Desinstala esphome local
+
+usar solo python -m esphome ...y lo que sea para usar el repo
+
+.\.venv\Scripts\Activate.ps1  #Activa el entorno virtual
+
+deactivate # salir entorno virtual
+
+
+compilar
+C:\HA\ESPHome_VSD\.venv\Scripts\esphome.exe run C:\HA\ESPHome_VSD\configs\test.yaml
+
+
+compilar y subir OTA
+& .\.venv\Scripts\esphome.exe run configs\test.yaml --upload-port OTA
+
+compilar y subir USB
+& .\.venv\Scripts\esphome.exe run configs\test.yaml --upload-port COM3
+
+
+Tareas Control + Shift + P
+
+tasks: buscar la tarea
