@@ -95,7 +95,44 @@
         "reveal": "always",
         "panel": "dedicated"
       }
-    }
+    },
+    {
+            "label": "ESPHome: Update Core + Build",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-ExecutionPolicy",
+                "Bypass",
+                "-NoProfile",
+                "-File",
+                ".\\.vscode\\update_esphome.ps1"
+            ],
+
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+      },
+     {
+      "label": "Clean compilation (current file)",
+      "type": "shell",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\esphome.exe",
+      "args": [
+        "clean",
+        "${file}"
+      ],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+        }
+    },
   ]
 }
 

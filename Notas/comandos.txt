@@ -26,3 +26,21 @@ tasks: buscar la tarea
 
 NOTA: para que button task configure los botones tenemo que cerrar area de trabajo - abrir carpeta , configurar todo despues y guardar area de trabajo
 Hay que desactivar platform IO y Arduino pen el area de trabajo para que no toque los cojones
+
+Comando powewr shell:
+Limpiar codigo: esphome clean nombre_del_archivo.yaml
+Actualizar repositorio: 
+	cON CORE INSTALADO:
+		pip install --upgrade esphome
+	Con REPO instalado y ejecucion en virtual
+		{
+      			"label": "ESPHome: Update Core + Build",
+      			"type": "shell",
+      			"command": "powershell",
+      			"args": [
+      			"-ExecutionPolicy",
+      				"Bypass",
+      			"-Command",
+      			"deactivate;git fetch upstream; git merge upstream/dev; . .\\.venv\\Scripts\\Activate.ps1; pip install -r requirements.txt;"
+     		 	]
+		}

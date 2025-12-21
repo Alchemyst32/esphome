@@ -45,6 +45,20 @@
       "tooltip": "Salida de entorno virtual",
       "alignment": "left",
       "color": "default"
+    },
+    {
+      "label": "🔄 Update CORE y Repo",
+      "task": "ESPHome: Update Core + Build",
+      "tooltip": "Actualiza el core ESPHome",
+      "alignment": "left",
+      "color": "default"
+    },
+        {
+      "label": "🧹 Clean Compiled files",
+      "task": "Clean compilation (current file)",
+      "tooltip": "Limpia archivos compilados",
+      "alignment": "left",
+      "color": "default"
     }
   ],
   "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
