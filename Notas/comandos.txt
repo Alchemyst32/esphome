@@ -23,3 +23,6 @@ compilar y subir USB
 Tareas Control + Shift + P
 
 tasks: buscar la tarea
+
+NOTA: para que button task configure los botones tenemo que cerrar area de trabajo - abrir carpeta , configurar todo despues y guardar area de trabajo
+Hay que desactivar platform IO y Arduino pen el area de trabajo para que no toque los cojones

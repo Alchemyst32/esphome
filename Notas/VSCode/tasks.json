@@ -61,41 +61,6 @@
         "reveal": "always",
         "panel": "dedicated"
       }
-    },
-    {
-      "label": "VS Entorno virtual Go",
-      "type": "shell",
-       "command": "powershell",
-       "args": [
-        "-NoExit",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-Command",
-        ". .\\.venv\\Scripts\\Activate.ps1"
-        ],
-      "problemMatcher": [],
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated"
-      }
-    },
-    {
-      "label": "VS Entorno virtual Out",
-      "type": "shell",
-       "command": "powershell",
-       "args": [
-        "-NoExit",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-Command",
-        ". .\\.venv\\Scripts\\deactivate"
-        ],
-      "problemMatcher": [],
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated"
-      }
     }
   ]
 }
-

@@ -1,0 +1,46 @@
+{
+  "VsCodeTaskButtons.showCounter": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esphome.esphome-vscode"
+  },
+  "files.associations": {
+    "*.yaml": "esphome"
+  },
+  "VsCodeTaskButtons.tasks": [
+    {
+      "label": "🚀 OTA",
+      "task": "ESPHome: OTA (current file)",
+      "tooltip": "Upload firmware via OTA (ESPHome)",
+      "alignment": "left",
+      "color": "default"
+    },
+    {
+      "label": "📡 Logs",
+      "task": "ESPHome: Logs (OTA)",
+      "tooltip": "ESPHome logs (OTA)",
+      "alignment": "left",
+      "color": "default"
+    },
+    {
+      "label": "🔌 USB",
+      "task": "ESPHome: USB (current file)",
+      "tooltip": "Upload via USB (you'll be prompted for COM)",
+      "alignment": "left",
+      "color": "warning"
+    },
+    {
+      "label": "✅ Validate",
+      "task": "ESPHome: Validate (current file)",
+      "tooltip": "ESPHome config validation",
+      "alignment": "left",
+      "color": "default"
+    }
+  ],
+  "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+  "yaml.customTags": [
+    "!lambda scalar",
+    "!secret scalar",
+    "!include scalar"
+  ],
+  "yaml.validate": false
+}
