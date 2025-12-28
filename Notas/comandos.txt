@@ -32,6 +32,7 @@ Limpiar codigo: esphome clean nombre_del_archivo.yaml
 Actualizar repositorio: 
 	cON CORE INSTALADO:
 		pip install --upgrade esphome
+		
 	Con REPO instalado y ejecucion en virtual
 		{
       			"label": "ESPHome: Update Core + Build",

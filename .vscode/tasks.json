@@ -83,17 +83,17 @@
       "label": "VS Entorno virtual Out",
       "type": "shell",
        "command": "powershell",
-       "args": [
-        "-NoExit",
-        "-ExecutionPolicy",
-        "Bypass",
-        "-Command",
-        ". .\\.venv\\Scripts\\deactivate"
-        ],
+  "args": [
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-Command",
+    "Write-Host '✅ Entorno virtual cerrado'; exit"
+  ],
       "problemMatcher": [],
       "presentation": {
         "reveal": "always",
-        "panel": "dedicated"
+        "panel": "new"
       }
     },
     {
